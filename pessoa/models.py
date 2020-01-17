@@ -10,17 +10,17 @@ class Pessoa(models.Model):
         ("M", "Feminino"),
         ("F", "Feminino")
     )
-    genero = models.CharField(verbose_name='Gênero', choices=generos)
+    genero = models.CharField(max_length=255, verbose_name='Gênero', choices=generos)
     cargos = (
-        ("Aprendiz"),
-        ("Assistente"),
-        ("Técnico"),
-        ("Analista"),
-        ("Supervisor"),
-        ("Gerente"),
-        ("Diretor"),
+        ("APRENDIZ", "Aprendiz"),
+        ("ASSISTENTE", "Assistente"),
+        ("TÈCNICO", "Técnico"),
+        ("ANALISTA", "Analista"),
+        ("Supervisor", "Supervisor"),
+        ("GERENTE", "Gerente"),
+        ("DIRETOR", "Diretor"),
     )
-    cargo = models.CharField(verbose_name='Cargo', choices=cargos)
+    cargo = models.CharField(max_length=255, verbose_name='Cargo', choices=cargos)
     pretencao_salarial = models.FloatField(verbose_name="Pretenção Salarial")
     pcd = models.BooleanField(verbose_name="Possui alguma Deficiência?")
     objetivo = models.TextField(verbose_name="Objetivo Pretendido")
