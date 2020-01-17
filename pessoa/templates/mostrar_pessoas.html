@@ -7,10 +7,15 @@
     <a href="/pessoas/"><button>Ver pessoas</button></a>
     <a href="/empresa/"><button>Cadastrar empresa</button></a>
 </nav>
-{{msg}}
-    <form method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Cadastrar Empresa</button>
-    </form>
-{% endblock body %}
+
+    <h1>Todas as pessoas</h1>
+
+    {% for pessoa in pessoas %}
+    <p>{{pessoa.nome}}</p>
+    <p>{{pessoa.email}}</p>
+    <p>{{pessoa.cargo}}</p>
+    <button>OI</button>
+    <hr>
+    {% endfor %}
+
+{% endblock %}

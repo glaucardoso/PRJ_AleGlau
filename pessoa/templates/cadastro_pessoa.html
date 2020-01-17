@@ -2,6 +2,12 @@
 
 {% block body %}
 
+<nav>
+    <a href="/"><button>Cadastrar pessoa</button></a>
+    <a href="/pessoas/"><button>Ver pessoas</button></a>
+    <a href="/empresa/"><button>Cadastrar empresa</button></a>
+</nav>
+
 {{msg}}
     <form method="POST">
         {% csrf_token %}

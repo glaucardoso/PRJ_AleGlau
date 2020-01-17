@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 
 from pessoa.forms import PessoaForm
+from pessoa.models import Pessoa
 
 # Create your views here.
 
@@ -8,7 +9,7 @@ def cadastro_pessoa(request):
     form = PessoaForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('/', kwargs={'msg':'Cadastrado com sucesso'})
+        return redirect('/pessoas/', kwargs={'msg':'Cadastrado com sucesso'})
 
     args = {
         'form':form
@@ -16,3 +17,11 @@ def cadastro_pessoa(request):
 
     return render(request,'cadastro_pessoa.html',args)
     
+def mostrar_pessoas(request):
+    pessoas = Pessoa.objects.all()
+    
+    args = {
+        'pessoas': pessoas
+    }
+
+    return render(request, 'mostrar_pessoas.html', args)
