@@ -8,13 +8,14 @@ def cadastro_empresa(request):
     form = EmpresaForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('/', kwargs={'msg':'Cadastrado com sucesso'})
+        args = {
+            'msg': 'Cadastrou a empresa'
+        }
+        return render(request, 'cadastro_empresa.html', args)
 
     args = {
         'form':form
     }
 
     return render(request,'cadastro_empresa.html',args)
-    
- 
-# Create your views here.
+

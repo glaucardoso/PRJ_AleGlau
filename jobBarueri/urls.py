@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from pessoa.views import cadastro_pessoa
 from empresa.views import cadastro_empresa
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', cadastro_pessoa),

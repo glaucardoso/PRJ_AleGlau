@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 {% block body %}
+{{msg}}
     <form method="POST">
         {% csrf_token %}
         {{form.as_p}}
-        <button type="submit" > Cadastrar Empresa</button>
+        <button type="submit">Cadastrar Empresa</button>
     </form>
 {% endblock body %}
