@@ -20,5 +20,5 @@ from empresa.views import cadastro_empresa
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', cadastro_pessoa),
-    path('empresa/', cadastro empresa),
+    path('empresa/', cadastro_empresa),
 ]
