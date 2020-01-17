@@ -7,7 +7,7 @@ class Pessoa(models.Model):
     telefone = models.IntegerField(verbose_name='Telefone')
     email = models.CharField(max_length=50, verbose_name='E-mail')
     generos = (
-        ("M", "Feminino"),
+        ("M", "Masculino"),
         ("F", "Feminino")
     )
     genero = models.CharField(max_length=255, verbose_name='Gênero', choices=generos)
