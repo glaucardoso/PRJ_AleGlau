@@ -20,7 +20,7 @@ class Empresa(models.Model):
 
     nome = models.CharField(max_length=255,)
     endereço = models.CharField(max_length=255, )
-    cnpj = models.IntergerField()
+    cnpj = models.IntegerField()
     telefone = models.IntegerField()
     ramo_de_atividade = models.CharField(max_length=255, choices=ramos_de_atividade)
     porte_tamanho = models.CharField(max_length=255, choices=portes_tamanho )
