@@ -25,3 +25,22 @@ def mostrar_pessoas(request):
     }
 
     return render(request, 'mostrar_pessoas.html', args)
+
+def updt(request, id)
+    pessoas = Pessoa.objects.get(id=id)
+    form = PessoasForm(request.POST or None, instance=pessoa)
+
+      if form.is_valid():
+           form.save()
+
+        return redirect(f'../detail/{pessoas.id}')
+
+
+    args = {
+        'pessoas'.pessoa
+        'form':form
+    }
+
+    
+
+    return render(request, 'update.html', args)
